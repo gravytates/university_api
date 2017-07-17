@@ -1,11 +1,35 @@
 class UniversitiesController < ApplicationController
   def index
-    @universities = {"name": "USC", "description": "it's a great school.", "population": 15000, "mascot": "trojan"}
+    @universities = University.all
     json_response(@universities)
   end
 
+  def show
+    @university = University.find(params[:id])
+    json_response(@university)
+  end
+
+  def create
+    @university = University.create(university_params)
+    json_response(@university)
+  end
+
+  def update
+    @university = University.find(params[:id])
+    @university.update(university_params)
+  end
+
+  def destroy
+    @university = University.find(params[:id])
+    @university.destroy
+  end
+
   private
-  def json_response(object)
-    render json: object, status: 200
+  def json_response(object, status = :ok)
+    render json: object, status: status
+  end
+
+  def university_params
+    params.permit(:name, :description, :population, :mascot)
   end
 end

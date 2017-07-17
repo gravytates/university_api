@@ -1,6 +1,9 @@
 class UniversitiesController < ApplicationController
   def index
-    @universities = University.all
+    # @universities = University.all
+    name = params[:name]
+    @universities = University.search(name)
+    binding.pry
     json_response(@universities)
   end
 

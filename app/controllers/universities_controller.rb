@@ -11,17 +11,23 @@ class UniversitiesController < ApplicationController
 
   def create
     @university = University.create!(university_params)
-    json_response(@university)
+    json_response(@university, :created)
   end
 
   def update
     @university = University.find(params[:id])
     @university.update(university_params)
+    if @university.update!(university_params)
+      render status: 200, json: { message: "Your university has successfully been updated." }
+    end
   end
 
   def destroy
     @university = University.find(params[:id])
     @university.destroy
+    if @university.destroy!
+      render status: 200, json: { message: "Your university has successfully been deleted." }
+    end
   end
 
   private

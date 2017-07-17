@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe 'post universities', type: :request do
   before do
     FactoryGirl.reload

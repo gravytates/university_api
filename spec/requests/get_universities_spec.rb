@@ -13,3 +13,13 @@ describe 'get universities', type: :request do
     expect(response).to have_http_status :success
   end
 end
+
+describe 'get exceptions', type: :request do
+  let!(:universities) { FactoryGirl.create_list(:university, 20)}
+
+  before { get '/universities/22' }
+
+  it 'returns status code 404' do
+    expect(response).to have_http_status :not_found
+  end
+end

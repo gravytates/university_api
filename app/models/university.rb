@@ -5,8 +5,8 @@ class University < ApplicationRecord
 
   scope :search_by_description, -> (description) { where("description like ?", "%#{description}%") }
 
-  scope :search_by_population, -> (population) { where("population like ?", "%#{population}%" ) }
-  
+  scope :search_by_population, -> (population) { where("population = ?", population ) }
+
   scope :search_by_mascot, -> (mascot) { where("mascot like ?", "%#{mascot}%") }
 
 end

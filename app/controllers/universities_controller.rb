@@ -1,9 +1,22 @@
 class UniversitiesController < ApplicationController
   def index
-    # @universities = University.all
-    name = params[:name]
-    @universities = University.search(name)
-    binding.pry
+
+    if params[:name]
+      name = params[:name]
+      @universities = University.search_by_name(name)
+    elsif params[:description]
+      description = params[:description]
+      @universities = University.search_by_description(description)
+    elsif params[:population]
+      population = params[:population]
+      @universities = University.search_by_population(population)
+    elsif params[:mascot]
+      mascot = params[:mascot]
+      @universities = University.search_by_mascot(mascot)
+    else
+      @universities = University.all
+    end
+
     json_response(@universities)
   end
 

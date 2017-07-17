@@ -25,9 +25,6 @@ class UniversitiesController < ApplicationController
   end
 
   private
-  def json_response(object, status = :ok)
-    render json: object, status: status
-  end
 
   def university_params
     params.permit(:name, :description, :population, :mascot)

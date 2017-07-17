@@ -10,7 +10,7 @@ class UniversitiesController < ApplicationController
   end
 
   def create
-    @university = University.create(university_params)
+    @university = University.create!(university_params)
     json_response(@university)
   end
 

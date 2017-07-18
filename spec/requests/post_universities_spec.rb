@@ -1,11 +1,17 @@
 require 'rails_helper'
+require 'jwt'
+# hmac_secret = 'my$ecretK3y'
 
 describe 'post universities', type: :request do
   university = FactoryGirl.build(:university)
+  user = User.create(email: 'a@a.com', password: '111111', password_confirmation: '111111')
 
-  before {
+
+  before do
+    token = JsonWebToken.encode({user_id: user.id})
+    head "Authorization", "Bearer #{token}",
     post '/universities', params: {name: university.name, description: university.description, population: university.population, mascot: university.mascot }
-  }
+  end
 
   it 'returns the university name' do
     expect(JSON.parse(response.body)['name']).to eq university.name

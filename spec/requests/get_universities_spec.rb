@@ -11,7 +11,7 @@ describe 'get universities', type: :request do
 
   it 'returns all universities by name' do
     get '/universities?name=USC'
-    output = json
+    output = JSON.parse(response.body).first
     expect(output.fetch("name")).to eq 'USC'
   end
 

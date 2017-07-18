@@ -1,4 +1,6 @@
 class UniversitiesController < ApplicationController
+  before_action :authenticate_request!
+
   def index
 
     if params[:name]

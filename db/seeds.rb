@@ -5,7 +5,7 @@ class Seed
   end
 
   def generate_universities
-    20.times do |i|
+    40.times do |i|
       university = University.create!(
         name: Faker::University.unique.name,
         description: Faker::Coffee.unique.notes,
@@ -13,8 +13,8 @@ class Seed
         mascot: Faker::Team.unique.creature
       )
     end
+    puts "Created #{University.count} universities"
   end
 end
-puts "Created #{University.count} universities"
 
 Seed.begin

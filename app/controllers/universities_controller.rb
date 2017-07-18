@@ -13,6 +13,8 @@ class UniversitiesController < ApplicationController
     elsif params[:mascot]
       mascot = params[:mascot]
       @universities = University.search_by_mascot(mascot)
+    elsif params[:page]
+      @universities = University.paginate(page: params[:page], per_page: 10)
     else
       @universities = University.all
     end

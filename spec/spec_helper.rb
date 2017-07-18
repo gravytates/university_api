@@ -12,8 +12,11 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+DatabaseCleaner.strategy = :truncation
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include ApiHelper, type: :api
+  config.include Requests::JsonHelpers, type: :api
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

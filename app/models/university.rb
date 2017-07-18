@@ -1,4 +1,5 @@
 class University < ApplicationRecord
+  has_many :reviews
   validates :name, :description, :population, :mascot, presence: true
 
   scope :search_by_name, -> (name) { where("name like ?", "%#{name}%") }

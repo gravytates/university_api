@@ -12,8 +12,11 @@ class Seed
         population: Faker::Number.between(100, 70000),
         mascot: Faker::Team.unique.creature
       )
+      university.reviews.create!(university_id: university.id, author: 'Griggs', content: 'Waste of money', rating: Faker::Number.between(1,5))
     end
     puts "Created #{University.count} universities"
+    puts "Created #{Review.count} reviews"
+
   end
 end
 

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :universities
+  resources :universities do
+    resources :reviews
+  end
 
   root to: 'universities#index'
 

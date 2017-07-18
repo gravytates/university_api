@@ -2,6 +2,7 @@ class Seed
   def self.begin
     seed = Seed.new
     seed.generate_universities
+    seed.generate_users
   end
 
   def generate_universities
@@ -17,6 +18,11 @@ class Seed
     puts "Created #{University.count} universities"
     puts "Created #{Review.count} reviews"
 
+  end
+
+  def generate_users
+    User.create(email:'a@a.com', password:'111111', password_confirmation:'111111')
+    puts "Created #{User.count} users"
   end
 end
 

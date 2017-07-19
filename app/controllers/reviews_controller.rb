@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_request!, except: [:index, :show]
+
   def index
     @university = University.find(params[:university_id])
     json_response(@university.reviews)

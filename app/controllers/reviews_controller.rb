@@ -10,6 +10,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    if @review.destroy!
+      render status: 200, json: { message: "Your review has successfully been deleted." }
+    end
   end
 
   def update

@@ -61,7 +61,7 @@ You can test the API in Postman.
 
 * URL: localhost:3000/
 * Header Key: Authorization
-* Header Value: Bearer 'your-own-token-goes-here'
+* Header Value: 'your-own-token-goes-here'
 
 ## Calling API from another application
 You can test API calls from your own application via the Rails Console.  See sample commands below for GET, PATCH, POST, and DELETE.

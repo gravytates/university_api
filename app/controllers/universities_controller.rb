@@ -25,13 +25,11 @@ class UniversitiesController < ApplicationController
   end
 
   def show
-    @university = University.find(params[:id])
-    json_response(@university)
+    json_response(University.find(params[:id]))
   end
 
   def create
-    @university = University.create!(university_params)
-    json_response(@university, :created)
+    json_response(University.create!(university_params), :created)
   end
 
   def update

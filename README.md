@@ -1,6 +1,6 @@
 # _University API_
 
-#### _This is a API Application built using Ruby on Rails.  July 14, 2017_
+#### _This is an API Application built using Ruby on Rails.  July 14, 2017_
 
 #### By _**Asia Kane and Grady Shelton**_
 

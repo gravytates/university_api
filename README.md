@@ -2,7 +2,7 @@
 
 #### _This is an API Application built using Ruby on Rails.  July 14, 2017_
 
-#### By _**Asia Kane and Grady Shelton**_
+#### By _**Grady Shelton and Asia Kane**_
 
 ## Description
 
@@ -139,4 +139,4 @@ _I encourage you to update/make suggestions/refactor this code as you see fit. I
 
 ### License
 *This software is licensed under the MIT license*
-Copyright © 2017 **Asia Kane and Grady Shelton**
+Copyright © 2017 **Grady Shelton and Asia Kane**
